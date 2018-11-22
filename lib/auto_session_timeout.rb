@@ -33,7 +33,7 @@ module AutoSessionTimeout
   def render_session_timeout
     session[:user_id] = nil
     flash[:notice] = "Su sessión ha finalizado debido a una inactividad de 15 minutos."
-    redirect_to "/"
+    redirect_to "/login?return_path=#{request.fullpath}"
   end
   
 end
